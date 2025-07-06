@@ -12,3 +12,4 @@
 /Users/desertik/Work/arrays/arrays/obj/Debug/net9.0/arrays.pdb
 /Users/desertik/Work/arrays/arrays/obj/Debug/net9.0/arrays.genruntimeconfig.cache
 /Users/desertik/Work/arrays/arrays/obj/Debug/net9.0/ref/arrays.dll
+/Users/desertik/Work/arrays/arrays/obj/Debug/net9.0/arrays.sourcelink.json

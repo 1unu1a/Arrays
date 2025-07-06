@@ -4,7 +4,7 @@ public class ShiftArray //ДЗ: Сдвиг значений массива
 {
     int[] array = new int [10];
     Random random = new Random();
-    public int imput;
+    public int input;
     public int shift;
 
     public void ShiftLeft()
@@ -18,8 +18,8 @@ public class ShiftArray //ДЗ: Сдвиг значений массива
         }
         
         Console.WriteLine("\nВведиите количество сдвигов влево:");
-        imput = Convert.ToInt32(Console.ReadLine());
-        shift = imput % array.Length;
+        input = Convert.ToInt32(Console.ReadLine());
+        shift = input % array.Length;
 
         for (int i = 0; i < shift; i++)
         {

@@ -6,61 +6,71 @@ public class DinamicArray //ДЗ: Динамический массив
     int[] array = new int [1];
     int countElement = 0;
 
-    public void PrintDinamicArray()
+    public void RunArray()
     {
         while (true)
         {
-            Console.Write("Текущий массив:");
+            PrintArray();
 
+            Console.Write("Введите число или команду sum (для сложения) / exit (для выхода):");
+            string input = Console.ReadLine();
 
-            for (int i = 0; i < countElement; i++)
+            switch (input)
             {
-                Console.Write($"{array[i]} ");
+                case "sum":
+                    PrintSum();
+                    break;
+
+                case "exit":
+                    Console.WriteLine("Выход");
+                    return;
+
+                default:
+                    AddNumber(input);
+                    break;
             }
+        }
+    }
+    public void PrintArray()
+    {
+        Console.Write("Текущий массив: ");
+        for (int i = 0; i < countElement; i++)
+        {
+            Console.Write($"{array[i]} ");
+        }
+        Console.WriteLine();
+    }
 
-            Console.WriteLine();
+    public void PrintSum()
+    {
+        int sum = 0;
+        for (int i = 0; i < countElement; i++)
+        {
+            sum += array[i];
+        }
+        Console.WriteLine($"Сумма всех чисел: {sum}");
+    }
 
-            Console.WriteLine("Введите число или команду exit:");
-            string imput = Console.ReadLine();
-
-            if (imput == "sum")
+    public void AddNumber(string input)
+    {
+        if (int.TryParse(input, out int number))
+        {
+            if (countElement == array.Length)
             {
-                int sum = 0;
-
+                int[] newArray = new int[array.Length * 2];
                 for (int i = 0; i < array.Length; i++)
                 {
-                    sum += array[i];
-                    Console.WriteLine($"Ваша сумма: {sum}");
+                    newArray[i] = array[i];
                 }
+                array = newArray;
             }
-            else if (imput == "exit")
-            {
-                Console.WriteLine("Выход");
-                break;
-            }
-            else
-            {
-                if (int.TryParse(imput, out int number))
-                {
-                    if (countElement == array.Length)
-                    {
-                        int[] result = new int[array.Length * 2];
-                        for (int i = 0; i < array.Length; i++)
-                        {
-                            result[i] = array[i];
-                        }
 
-                        array = result;
-                    }
-
-                    array[countElement] = number;
-                    countElement++;
-                }
-                else
-                {
-                    Console.WriteLine("Ошибка, введите число или команду exit");
-                }
-            }
+            array[countElement] = number;
+            countElement++;
+        }
+        else
+        {
+            Console.WriteLine("Ошибка, введите число или команду exit");
         }
     }
 }

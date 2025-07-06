@@ -3,10 +3,10 @@ namespace My.Home.Work.Arrays;
 public class MaxElement //ДЗ: Наибольший элемент
 
 {
-    //const int line = 10;
-    //const int column = 10;
+    const int MIN_ELEMENT_ARRAY = 10;
+    const int MAX_ELEMENT_ARRAY = 100;
     int[,] array = new int[10, 10];
-    int maxElement = 0;
+    int maxElement = int.MinValue;
     Random random = new Random();
 
     public void PrintMaxArray()
@@ -15,9 +15,7 @@ public class MaxElement //ДЗ: Наибольший элемент
         {
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                int minElementArray = 10;
-                int maxElementArray = 100;
-                array[i, j] = random.Next(minElementArray, maxElementArray);
+                array[i, j] = random.Next(MIN_ELEMENT_ARRAY, MAX_ELEMENT_ARRAY);
                 Console.Write(array[i, j] + " ");
                 
                 if (maxElement < array[i, j])

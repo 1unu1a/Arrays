@@ -14,7 +14,7 @@
             localMaxArray.PrintLocalMaxArray();
             
             var dinamicArray = new DinamicArray();
-            dinamicArray.PrintDinamicArray();
+            dinamicArray.RunArray();
             
             var subarrayRepeating = new SubarrayRepeating();
             subarrayRepeating.PrintSubArray();
@@ -23,7 +23,7 @@
             sortingArray.PrintSortArray();
             
             var split = new Split();
-            split.PrintSlitArray();
+            split.PrintSplitArray();
             
             var shiftArray = new ShiftArray();
             shiftArray.ShiftLeft();

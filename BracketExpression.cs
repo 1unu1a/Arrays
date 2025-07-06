@@ -16,12 +16,16 @@ public class BracketExpression //ДЗ: Скобочное выражение
             if (input[i] == '(')
             {
                 depth++;
+
                 if (depth > maxDepth)
-                    maxDepth = depth;
+                {
+                    maxDepth = depth;                    
+                }
             }
             else if (input[i] == ')')
             {
                 depth--;
+                
                 if (depth < 0)
                 {
                     isValid = false;
@@ -34,8 +38,13 @@ public class BracketExpression //ДЗ: Скобочное выражение
                 break;
             }
         }
+
         if (depth != 0)
+        {
             isValid = false;
+        }
+        
+        //Вывод
         if (isValid)
         {
             Console.WriteLine("Строка корректная");

@@ -16,6 +16,17 @@ public class SortingNumbers //ДЗ: Сортировка чисел
             Console.Write($"{array[i]} ");
         }
 
+        SortArray();
+        
+        Console.WriteLine("\nПузырьковая сортировка:");
+        for (int i = 0; i < array.Length; i++)
+        {
+            Console.Write($"{array[i]} ");
+        }
+    }
+
+    public void SortArray()
+    {
         for (int i = 0; i < array.Length - 1; i++)
         {
             for (int j = 0; j < array.Length - 1 - i; j++)
@@ -27,11 +38,6 @@ public class SortingNumbers //ДЗ: Сортировка чисел
                     array[j + 1] = temp;
                 }
             }
-        }
-        Console.WriteLine("\nПузырьковая сортировка:");
-        for (int i = 0; i < array.Length; i++)
-        {
-            Console.Write($"{array[i]} ");
         }
     }
 }

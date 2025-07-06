@@ -5,7 +5,7 @@ public class Split //ДЗ: Split
 {
     string text = "Привет, выведи весь этот текст по одному слову";
 
-    public void PrintSlitArray()
+    public void PrintSplitArray()
     {
         string[] splitArray = text.Split(' ');
         Console.WriteLine("Слова в тексте: ");
